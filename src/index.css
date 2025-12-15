@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  background-color: #0a0a0f;
+  font-family: 'Inter', sans-serif;
+  -webkit-app-region: drag;
+  /* Allow dragging from anywhere */
+}
+
+/* Disable dragging for interactive elements so they can be clicked/focused */
+input,
+button,
+a,
+select,
+textarea,
+.recharts-wrapper {
+  -webkit-app-region: no-drag;
+}
