@@ -1,3 +1,4 @@
+import InvestorSimulator from './InvestorSimulator';
 import React, { useState, useMemo, useEffect } from 'react';
 import { LineChart, Line, AreaChart, Area, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend, ComposedChart, Cell } from 'recharts';
 
@@ -379,11 +380,10 @@ export default function SaaSMetricsDashboard() {
                 <button
                   key={index}
                   onClick={() => setActiveMonth(index)}
-                  className={`px-3 py-2 rounded-lg text-xs font-medium whitespace-nowrap transition-all ${
-                    activeMonth === index
-                      ? 'bg-emerald-500 text-white shadow-lg shadow-emerald-500/20'
-                      : 'bg-zinc-800 text-zinc-400 hover:bg-zinc-700'
-                  }`}
+                  className={`px-3 py-2 rounded-lg text-xs font-medium whitespace-nowrap transition-all ${activeMonth === index
+                    ? 'bg-emerald-500 text-white shadow-lg shadow-emerald-500/20'
+                    : 'bg-zinc-800 text-zinc-400 hover:bg-zinc-700'
+                    }`}
                 >
                   {index + 1}
                 </button>
@@ -703,7 +703,10 @@ export default function SaaSMetricsDashboard() {
 
         </div>
       </div>
-
+      {/* Investor Simulator Section */}
+      <div className="mt-16 mb-8">
+        <InvestorSimulator />
+      </div>
       {/* Footer */}
       <footer className="mt-12 text-center text-zinc-600 text-xs">
         <p>SaaS Metrics Calculator • Postaveno pro analýzu MRR, LTV, CAC, ARR, ARPU, Churn & NRR</p>
